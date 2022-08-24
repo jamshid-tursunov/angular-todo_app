@@ -1,0 +1,40 @@
+.todo-item {
+  border-radius: 0.1rem;
+  margin: 0.1rem 0;
+  padding: 0 1rem;
+
+  &.isCompleted {
+    text-decoration: line-through;
+    color: grey;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid grey;
+
+    .inner-content {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    .remove-btn {
+      border-radius: 50%;
+      background-color: grey;
+      border: none;
+      color: #ffffff;
+      padding: 0.5rem 0.8rem;
+    }
+  }
+
+  .edit-todo-input {
+    padding: 0.5rem 0.5rem;
+    width: 100%;
+    border: none;
+    font-size: 1rem;
+    margin: 0.5rem 0;
+  }
+}

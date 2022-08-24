@@ -1,0 +1,24 @@
+<section class="main" [ngClass]="{ hidden: isTodosEmpty$ | async }">
+  <div class="main__mark-all-checkbox">
+    <input
+      #inputRef
+      type="checkbox"
+      class="toggle-all"
+      id="toggle-all"
+      [checked]="isAllTodosSelected$ | async"
+      (change)="toggleAllTodos($event)"
+    />
+    <label for="toggle-all">Mark all as completed</label>
+  </div>
+
+  <ul class="todo-list">
+    <app-todos-todo
+      #tdComponent
+      class="todo-list__item"
+      *ngFor="let todo of visibleTodos$ | async | filterTodos: searchText"
+      [todo]="todo"
+      [isEditing]="editingId === todo.id"
+      (onDblClicked)="fireDblClick($event)"
+    ></app-todos-todo>
+  </ul>
+</section>

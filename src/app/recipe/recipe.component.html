@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <header>
+    <h1>Welcome to Recipe Component</h1>
+  </header>
+  <main class="container">
+    <div class="block">
+      <ul>
+        <li
+          recipeHighlight
+          class="block__item"
+          *ngFor="let recipe of allRecipes$ | async"
+          (click)="selectRecipe(recipe.id)"
+        >
+          <app-recipe-item [recipe]="recipe"></app-recipe-item>
+        </li>
+      </ul>
+    </div>
+    <div class="block">
+      <h5>Details block</h5>
+      <app-recipe-details
+        *ngIf="selectedRecipe"
+        [selectedRecipe]="selectedRecipe"
+      ></app-recipe-details>
+    </div>
+  </main>
+</div>

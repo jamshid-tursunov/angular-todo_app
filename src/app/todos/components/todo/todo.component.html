@@ -1,0 +1,26 @@
+<li class="todo-item" [ngClass]="{ isCompleted: todoProps.isCompleted }">
+  <input
+    *ngIf="isEditingProp; else todoContent"
+    type="text"
+    #textInput
+    [value]="todoProps.text"
+    (keyup.enter)="saveTodoEdit($event, todoProps.id)"
+    class="edit-todo-input"
+    (focusout)="saveTodoEdit($event, todoProps.id)"
+  />
+  <ng-template #todoContent>
+    <div class="todo-item__content">
+      <span class="inner-content">
+        <input
+          type="checkbox"
+          [checked]="todoProps.isCompleted"
+          (change)="toggleTodoStatus(todoProps.id)"
+        />
+        <p (dblclick)="openEditField()">{{ todoProps.text }}</p>
+      </span>
+      <button class="remove-btn" (click)="removeTodo(todoProps.id)">
+        &times;
+      </button>
+    </div>
+  </ng-template>
+</li>

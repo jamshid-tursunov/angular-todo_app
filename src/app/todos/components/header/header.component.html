@@ -1,0 +1,13 @@
+<header class="header">
+  <h1>Welcome to the Application</h1>
+  <p>Project is done by the purpose of just learning of rxjs</p>
+  <input
+    type="text"
+    autofocus
+    placeholder="What needs to be done?"
+    [ngModel]="inputValue"
+    (ngModelChange)="changeValueFunc($event)"
+    (keyup.enter)="addTodo()"
+  />
+  <p *ngIf="errMsg" class="err-msg">{{ errMsg }}</p>
+</header>

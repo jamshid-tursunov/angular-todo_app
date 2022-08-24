@@ -1,0 +1,16 @@
+<ul class="header-list">
+  <li
+    class="header-list__item"
+    [ngClass]="{ active: currentLink === '' }"
+    (click)="navigateLink()"
+  >
+    <a routerLink="/">Todo Section</a>
+  </li>
+  <li
+    class="header-list__item"
+    [ngClass]="{ active: currentLink === '/recipe' }"
+    (click)="navigateLink()"
+  >
+    <a routerLink="recipe">Recipe Section</a>
+  </li>
+</ul>
