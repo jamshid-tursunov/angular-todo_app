@@ -1,3 +1,4 @@
+import { GameModule } from './game/game.module';
 import { AppHeaderComponent } from './header/header.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -16,6 +17,7 @@ import { RecipeModule } from './recipe/recipe.module';
     AppRoutingModule,
     TodosModule,
     RecipeModule,
+    GameModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
