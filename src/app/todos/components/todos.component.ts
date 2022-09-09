@@ -1,6 +1,5 @@
 import {
   Component,
-  ViewChild,
   AfterViewInit,
   ViewChildren,
   QueryList,
@@ -11,15 +10,16 @@ import { TodosHeaderComponent } from './header/header.component';
 @Component({
   selector: 'app-todos',
   templateUrl: './todos.component.html',
+  styleUrls: ['./todos.component.scss']
 })
 export class TodosComponent implements AfterViewInit, OnInit {
-  @ViewChildren(TodosHeaderComponent)
-  todosHeader: QueryList<TodosHeaderComponent>;
+  @ViewChildren(TodosHeaderComponent) todosHeader: QueryList<TodosHeaderComponent>;
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log('init', this.todosHeader)
+  }
 
   ngAfterViewInit(): void {
-    console.log('ngafterviewinit');
     // this.todosHeader.changes.subscribe((changes) => changes);
     // console.log('1', this.todosHeader.toArray());
   }

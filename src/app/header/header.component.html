@@ -13,4 +13,11 @@
   >
     <a routerLink="recipe">Recipe Section</a>
   </li>
+  <li
+    class="header-list__item"
+    [ngClass]="{ active: currentLink === '/todo-rx' }"
+    (click)="navigateLink()"
+  >
+    <a routerLink="todo-rx">Todo Rxjs</a>
+  </li>
 </ul>
